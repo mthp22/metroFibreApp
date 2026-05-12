@@ -1,0 +1,30 @@
+<main class="layout">
+  <aside class="left-panel">
+    <h2>Food Selector</h2>
+    <div class="recipes-grid">
+      @for (recipe of store.recipes(); track recipe.id) {
+        <app-recipe-selector
+          [recipe]="recipe"
+          [selected]="store.selectedRecipeIds().includes(recipe.id)"
+          [quantity]="store.selectedQuantities()[recipe.id] ?? 1"
+          [canPrepare]="store.canPrepareRecipe(recipe.id)"
+          (toggled)="store.toggleRecipe($event)"
+          (quantityChanged)="store.setQuantity($event.id, $event.quantity)"
+        />
+      }
+    </div>
+    <div class="actions">
+      <button (click)="store.calculate()" [disabled]="store.loading()">Calculate</button>
+      <button (click)="store.advise()" [disabled]="store.loading()">Advise Best</button>
+    </div>
+  </aside>
+
+  <section class="main-panel">
+    <app-remaining-summary
+      [ingredients]="store.ingredients()"
+      [remaining]="store.result()?.remainingIngredients ?? []"
+      [totalPeopleFed]="store.totalPeopleFed()"
+    />
+    <app-ingredient-usage [meals]="store.result()?.selectedMeals ?? []" />
+  </section>
+</main>
