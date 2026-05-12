@@ -1,0 +1,35 @@
+.recipe-card { 
+    border: 1px solid #cfd8d2; 
+    border-radius: 12px; 
+    padding: 12px; 
+    background: #fff; 
+    display: grid; 
+    gap: 8px; 
+    transition: opacity .2s ease; 
+}
+.recipe-card.faded { 
+    opacity: .38; 
+    filter: grayscale(.3); 
+}
+label { 
+    display: grid; 
+    gap: 2px; 
+}
+.title-row { 
+    display: flex; 
+    align-items: center; 
+    gap: 6px; 
+}
+.feeds { 
+    color: #496055; 
+    font-size: 0.9rem; 
+}
+.ingredients p { 
+    margin: 0; 
+    font-size: 0.85rem; 
+    color: #51675c; 
+}
+input[type='number'] { 
+    width: 100%; 
+    padding: 6px; 
+}
