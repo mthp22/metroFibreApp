@@ -1,0 +1,17 @@
+.panel { 
+    border: 1px solid #cfd8d2; 
+    border-radius: 12px; 
+    padding: 12px; 
+    background: #fff; 
+}
+article { 
+    border-top: 1px dashed #dce4de; 
+    padding: 8px 0; 
+}
+article:first-of-type { 
+    border-top: 0; 
+}
+p { 
+    margin: 2px 0; 
+    color: #4a6156; 
+}
