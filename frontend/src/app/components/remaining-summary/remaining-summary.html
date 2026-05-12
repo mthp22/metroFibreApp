@@ -1,0 +1,11 @@
+<section class="panel center">
+  <h2>People Fed</h2>
+  <p class="metric">{{ totalPeopleFed() }}</p>
+  <h3>Remaining Ingredients</h3>
+  @for (item of ingredients(); track item.name) {
+    <p>
+      {{ item.name }}:
+      {{ remaining().find(r => r.name === item.name)?.remainingQuantity ?? item.availableQuantity }} {{ item.unit }}
+    </p>
+  }
+</section>

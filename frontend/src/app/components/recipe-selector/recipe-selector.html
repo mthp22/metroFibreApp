@@ -1,0 +1,22 @@
+<article class="recipe-card" [class.faded]="!canPrepare() && !selected()">
+  <label>
+    <input type="checkbox" [checked]="selected()" [disabled]="!canPrepare() && !selected()" (change)="toggled.emit(recipe().id)" />
+    <div class="title-row">
+      <!-- <ng-icon [name]="recipe().icon" size="18"></ng-icon> -->
+      <strong>{{ recipe().name }}</strong>
+    </div>
+    <span class="feeds">Feeds {{ recipe().feeds }}</span>
+  </label>
+  <div class="ingredients">
+    @for (req of recipe().requiredIngredients; track req.ingredientName) {
+      <p>{{ req.ingredientName }}: {{ req.quantity }} {{ req.unit }}</p>
+    }
+  </div>
+  <input
+    type="number"
+    min="0"
+    [value]="quantity()"
+    [disabled]="!selected()"
+    (input)="onQuantityChanged($any($event.target).value)"
+  />
+</article>
