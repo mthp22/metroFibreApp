@@ -1,11 +1,16 @@
 <section class="panel">
   <h3> Ingredient Usage</h3>
-  @for (meal of meals(); track meal.mealName) {
-    <article>
-      <strong>{{ meal.mealName }} x {{ meal.quantityPrepared }} ({{ meal.peopleFed }} fed)</strong>
-      @for (req of meal.requiredIngredients; track req.ingredientName) {
-        <p>{{ req.ingredientName }}: {{ req.quantity * meal.quantityPrepared }} {{ req.unit }} total</p>
-      }
-    </article>
-  }
+  <div class="content">
+    @for (meal of meals(); track meal.mealName) {
+      <article>
+        <div class="card">
+          <strong>{{ meal.mealName }} x {{ meal.quantityPrepared }} ({{ meal.peopleFed }} fed)</strong>
+          
+          @for (req of meal.requiredIngredients; track req.ingredientName) {
+            <p>{{ req.ingredientName }}: {{ req.quantity * meal.quantityPrepared }} {{ req.unit }} total</p>
+          }
+        </div>  
+      </article>
+    }
+  </div>
 </section>

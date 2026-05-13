@@ -29,6 +29,9 @@
     color: #fff; 
     border-radius: 8px; 
 }
+.actions button:last-child {
+    background: lightblue;
+}
 .main-panel { 
     display: grid; 
     align-content: start; 

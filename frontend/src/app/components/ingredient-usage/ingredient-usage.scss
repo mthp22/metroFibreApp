@@ -4,6 +4,9 @@
     padding: 12px; 
     background: #fff; 
 }
+h3{
+    text-align: center;
+}
 article { 
     border-top: 1px dashed #dce4de; 
     padding: 8px 0; 
@@ -14,4 +17,16 @@ article:first-of-type {
 p { 
     margin: 2px 0; 
     color: #4a6156; 
+}
+.content{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+.content .card{
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px lightcoral;
 }
